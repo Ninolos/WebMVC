@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebSalesMVC.Models;
+using WebSalesMVC.Services;
 
 namespace WebSalesMVC.Data
 {
@@ -17,5 +18,10 @@ namespace WebSalesMVC.Data
         public DbSet<Department> Department { get; set; }
         public DbSet<Seller> Seller { get; set; }
         public DbSet<SalesRecord> SalesRecord { get; set; }
+
+        public static implicit operator WebSalesMVCContext(SellerService v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

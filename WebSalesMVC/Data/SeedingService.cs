@@ -9,7 +9,7 @@ namespace WebSalesMVC.Data
 {
     public class SeedingService
     {
-        private WebSalesMVCContext _context;
+        private readonly WebSalesMVCContext _context;
 
         public SeedingService(WebSalesMVCContext context)
         {
