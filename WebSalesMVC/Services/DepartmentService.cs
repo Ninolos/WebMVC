@@ -7,24 +7,17 @@ using WebSalesMVC.Models;
 
 namespace WebSalesMVC.Services
 {
-    public class SellerService
+    public class DepartmentService
     {
         private readonly WebSalesMVCContext _context; //dependency declared, readonly is a good pratice
 
-        public SellerService(WebSalesMVCContext context)
+        public DepartmentService(WebSalesMVCContext context)
         {
             _context = context;
         }
-
-        public List<Seller> FindAll()
+        public List<Department> FindAll()
         {
-            return _context.Seller.ToList(); //sync operation
-        }
-
-        public void Insert(Seller obj)
-        {
-            _context.Add(obj);
-            _context.SaveChanges();
+            return _context.Department.OrderBy(x => x.Name).ToList();
         }
     }
 }
